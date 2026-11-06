@@ -1,0 +1,15 @@
+{
+  "name": "hk-squad",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Situs HK Squad dengan backend Node.js untuk reset kata sandi oleh admin",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "google-auth-library": "^9.15.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

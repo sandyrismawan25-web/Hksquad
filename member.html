@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090014">
+    <meta name="description" content="Kenali anggota HK Squad dan kelola profil setiap anggota." data-i18n-content="memberPageDescription">
+    <title data-i18n="memberPageTitle">Anggota HK Squad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="brand" href="index.html" aria-label="HK Squad - Beranda" data-i18n-aria-label="homeLinkLabel">
+            <img src="img/Screenshot%202026-04-11%20112253.png" alt="">
+            <span>HK<span class="brand-dot">.</span>Squad</span>
+        </a>
+    </header>
+
+    <div class="page-overlay" data-close-menu></div>
+    <nav class="sidebar" id="sidebar" aria-label="Menu" data-i18n-aria-label="navigationMenu">
+        <div class="sidebar-heading">
+            <span class="eyebrow" data-i18n="menuTitle">MENU HK SQUAD</span>
+            <button class="close-menu" type="button" aria-label="Tutup menu" data-i18n-aria-label="closeMenu" data-close-menu>&times;</button>
+        </div>
+        <a href="index.html#tentang" data-i18n="aboutLink">Tentang HK Squad</a>
+        <a href="index.html#nilai" data-i18n="valuesLink">Nilai Kami</a>
+        <a href="member.html"><span data-i18n="memberLink">Daftar Anggota</span><span>12</span></a>
+        <div class="sidebar-settings">
+            <h2 data-i18n="settingsTitle">Pengaturan</h2>
+            <label for="language-select" data-i18n="languageLabel">Bahasa</label>
+            <select id="language-select" class="language-select" aria-label="Pilih bahasa" data-i18n-aria-label="languageSelectLabel">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+            </select>
+            <div class="google-auth">
+                <span class="settings-label" data-i18n="googleLoginLabel">Login Google admin (opsional)</span>
+                <div class="google-signin-button" id="google-signin-button"></div>
+                <p class="google-auth-status" id="google-auth-status" role="status" aria-live="polite" data-i18n="googleSignedOut">Belum login (opsional)</p>
+                <button class="google-signout-button" id="google-signout-button" type="button" data-i18n="googleSignOut" hidden>Keluar</button>
+            </div>
+            <section class="email-auth" aria-labelledby="email-auth-title">
+                <h3 id="email-auth-title" class="settings-label" data-i18n="emailAuthTitle">Akun pengunjung (opsional)</h3>
+                <form class="email-auth-form" id="email-auth-form">
+                    <button class="google-provider-button" id="email-google-sign-in-button" type="button">
+                        <svg viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6C44.4 37.93 46.98 31.7 46.98 24.55z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.53 2.56 10.78l7.97-6.19z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.8l-7.73-6c-2.13 1.43-4.86 2.27-8.16 2.27-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        <span data-i18n="emailGoogleSignIn">Lanjutkan dengan Google</span>
+                    </button>
+                    <p class="email-auth-divider" id="email-auth-divider" data-i18n="emailOr">atau gunakan email</p>
+                    <label for="email-auth-email" data-i18n="emailLabel">Email</label>
+                    <input id="email-auth-email" type="email" autocomplete="email" required>
+                    <label for="email-auth-password" data-i18n="emailPasswordLabel">Kata sandi (minimal 6 karakter)</label>
+                    <input id="email-auth-password" type="password" autocomplete="current-password" minlength="6" required>
+                    <p class="email-auth-status" id="email-auth-status" role="status" aria-live="polite" data-i18n="emailAuthReady">Masuk atau daftar dengan email. Login tidak wajib.</p>
+                    <div class="email-auth-actions" id="email-auth-actions">
+                        <button class="email-auth-button primary" id="email-sign-in-button" type="button" data-i18n="emailSignIn">Masuk</button>
+                        <button class="email-auth-button" id="email-register-button" type="button" data-i18n="emailRegister">Daftar</button>
+                        <button class="email-auth-button" id="email-reset-button" type="button" data-i18n="emailReset">Lupa kata sandi?</button>
+                    </div>
+                    <button class="google-signout-button" id="email-signout-button" type="button" data-i18n="emailSignOut" hidden>Keluar dari akun</button>
+                </form>
+            </section>
+            <span class="settings-label" data-i18n="colorLabel">Warna tema</span>
+            <div class="theme-options" role="group" aria-label="Pilih warna tema" data-i18n-aria-label="themeOptionsLabel">
+                <button class="theme-swatch theme-purple" type="button" data-theme-choice="purple" aria-label="Ungu" data-i18n-aria-label="themePurpleLabel" aria-pressed="true"></button>
+                <button class="theme-swatch theme-blue" type="button" data-theme-choice="blue" aria-label="Biru" data-i18n-aria-label="themeBlueLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-green" type="button" data-theme-choice="green" aria-label="Hijau" data-i18n-aria-label="themeGreenLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-red" type="button" data-theme-choice="red" aria-label="Merah" data-i18n-aria-label="themeRedLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-black" type="button" data-theme-choice="black" aria-label="Hitam" data-i18n-aria-label="themeBlackLabel" aria-pressed="false"></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="members-page">
+        <div class="member-toast" id="member-toast" role="status" aria-live="polite" hidden>
+            <span class="toast-mark" aria-hidden="true">✦</span>
+            <span data-i18n="memberToast">Anggota Tim Dantar Siap Membasmi</span>
+        </div>
+        <section class="members-intro" aria-labelledby="members-title">
+            <div>
+                <p class="eyebrow" data-i18n="membersEyebrow">LIHAT KAMI</p>
+                <h1 id="members-title"><span data-i18n="membersTitle">Anggota</span> <span>HK Squad</span></h1>
+                <p data-i18n="membersDescription">Upload foto anda broo.</p>
+            </div>
+        </section>
+
+        <section class="members-panel" aria-label="Daftar 12 anggota HK Squad" data-i18n-aria-label="membersListLabel">
+            <div class="members-panel-heading">
+                <h2 data-i18n="memberListTitle">Daftar Anggota</h2>
+                <span data-i18n="memberSlotCount">12 SLOT ANGGOTA</span>
+            </div>
+            <div class="member-grid" id="member-grid" aria-live="polite"></div>
+            <p class="member-load-error" id="member-load-error" role="alert" hidden></p>
+        </section>
+        <a class="members-back" href="index.html"><span aria-hidden="true">&larr; </span><span data-i18n="backAbout">Kembali ke Tentang HK Squad</span></a>
+        <p class="storage-warning">
+        </p>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html">
+            <img src="img/Screenshot%202026-04-11%20112253.png" alt="">
+            <span>HK<span class="brand-dot">.</span>Squad</span>
+        </a>
+        <p data-i18n="footerTagline">Solid bersama, berkembang bersama.</p>
+        <span class="footer-copy">&copy; 2026 HK Squad</span>
+    </footer>
+
+    <dialog class="member-dialog" id="member-dialog" aria-labelledby="member-dialog-title">
+        <div class="member-dialog-inner">
+            <div class="member-dialog-heading">
+                <div>
+                    <p class="eyebrow" data-i18n="editMemberTitle">PENGATURAN ANGGOTA</p>
+                    <h2 id="member-dialog-title" data-i18n="manageMember">Kelola anggota</h2>
+                </div>
+                <button class="dialog-close" type="button" aria-label="Tutup" data-i18n-aria-label="closeDialogLabel" data-close-dialog>&times;</button>
+            </div>
+
+            <section id="member-auth-panel">
+                <form class="member-form" id="member-auth-form">
+                    <label for="member-current-password" data-i18n="passwordLabel">Kata sandi anggota</label>
+                    <input id="member-current-password" type="password" autocomplete="current-password" required>
+                    <p class="form-error" id="member-auth-error" role="alert"></p>
+                    <div class="dialog-actions">
+                        <button class="dialog-button" type="button" data-close-dialog data-i18n="cancelButton">Batal</button>
+                        <button class="dialog-button primary" type="submit" data-i18n="continueButton">Lanjutkan</button>
+                    </div>
+                </form>
+                <div class="member-auth-hint" id="forgot-password-panel" hidden>
+                    <p data-i18n="forgotPasswordHint">Setelah 3 kali salah, login dengan Google admin dari menu Pengaturan untuk mereset kata sandi.</p>
+                    <form class="member-form" id="admin-reset-form">
+                        <p class="google-reset-notice" data-i18n="googleResetNotice">Login dengan akun Google admin sebelum mereset kata sandi.</p>
+                        <div class="google-signin-button" id="google-reset-signin-button"></div>
+                        <label for="admin-new-password">
+                            <span data-i18n="newPasswordLabel">Kata sandi baru</span>
+                            <input id="admin-new-password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                        </label>
+                        <label for="admin-confirm-password">
+                            <span data-i18n="confirmPasswordLabel">Konfirmasi kata sandi baru</span>
+                            <input id="admin-confirm-password" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                        </label>
+                        <p class="form-error" id="admin-reset-error" role="alert"></p>
+                        <div class="dialog-actions">
+                            <button class="dialog-button primary" type="submit" data-i18n="adminResetButton">Verifikasi admin &amp; ubah kata sandi</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="member-editor" hidden>
+                <form class="member-form" id="member-editor-form">
+                    <label for="member-name-input">
+                        <span data-i18n="memberNameLabel">Nama anggota</span>
+                        <input id="member-name-input" type="text" maxlength="40" required>
+                    </label>
+                    <label for="member-role-input">
+                        <span data-i18n="memberRoleLabel">Posisi / role</span>
+                        <input id="member-role-input" type="text" maxlength="50" required>
+                    </label>
+                    <div class="member-photo-editor">
+                        <div class="member-photo-preview-wrap">
+                            <img id="member-photo-preview" alt="Pratinjau foto anggota" data-i18n-alt="memberPhotoPreview" hidden>
+                            <span id="member-photo-empty">Belum ada foto</span>
+                        </div>
+                        <div class="member-photo-actions">
+                            <label for="member-photo-input">
+                                <span data-i18n="memberPhotoLabel">Foto profil (maks. 5 MB)</span>
+                                <input id="member-photo-input" type="file" accept="image/*">
+                            </label>
+                            <button class="text-button" id="clear-member-photo" type="button" data-i18n="deletePhotoButton">Hapus foto</button>
+                        </div>
+                    </div>
+
+                    <fieldset class="password-change">
+                        <legend data-i18n="changePasswordTitle">Ganti kata sandi (opsional)</legend>
+                        <p data-i18n="changePasswordHint">Kosongkan jika tidak ingin mengganti kata sandi.</p>
+                        <label for="member-new-password">
+                            <span data-i18n="newPasswordLabel">Kata sandi baru</span>
+                            <input id="member-new-password" type="password" autocomplete="new-password" minlength="8">
+                        </label>
+                        <label for="member-confirm-password">
+                            <span data-i18n="confirmPasswordLabel">Konfirmasi kata sandi baru</span>
+                            <input id="member-confirm-password" type="password" autocomplete="new-password" minlength="8">
+                        </label>
+                    </fieldset>
+
+                    <p class="form-error" id="member-editor-error" role="alert"></p>
+                    <div class="dialog-actions">
+                        <button class="dialog-button" type="button" data-close-dialog data-i18n="cancelButton">Batal</button>
+                        <button class="dialog-button primary" type="submit" data-i18n="saveChangesButton">Simpan perubahan</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </dialog>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js" defer></script>
+    <script src="java%20script/auth-config.js"></script>
+    <script src="https://accounts.google.com/gsi/client" defer></script>
+    <script src="java%20script/js.js" defer></script>
+</body>
+</html>

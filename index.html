@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090014">
+    <meta name="description" content="Kenali HK Squad, komunitas esports dan gaming yang tumbuh bersama dengan solidaritas dan sportivitas." data-i18n-content="homePageDescription">
+    <title data-i18n="homePageTitle">Tentang HK Squad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="brand" href="#beranda" aria-label="HK Squad - Beranda" data-i18n-aria-label="homeLinkLabel">
+            <img src="img/Screenshot%202026-04-11%20112253.png" alt="">
+            <span>HK<span class="brand-dot">.</span>Squad</span>
+        </a>
+    </header>
+
+    <div class="page-overlay" data-close-menu></div>
+    <nav class="sidebar" id="sidebar" aria-label="Menu" data-i18n-aria-label="navigationMenu">
+        <div class="sidebar-heading">
+            <span class="eyebrow" data-i18n="menuTitle">MENU HK SQUAD</span>
+            <button class="close-menu" type="button" aria-label="Tutup menu" data-i18n-aria-label="closeMenu" data-close-menu>&times;</button>
+        </div>
+        <a href="#tentang" data-i18n="aboutLink">Tentang HK Squad</a>
+        <a href="#nilai" data-i18n="valuesLink">Nilai Kami</a>
+        <a href="member.html"><span data-i18n="memberLink">Daftar Anggota</span><span>12</span></a>
+        <div class="sidebar-settings">
+            <h2 data-i18n="settingsTitle">Pengaturan</h2>
+            <label for="language-select" data-i18n="languageLabel">Bahasa</label>
+            <select id="language-select" class="language-select" aria-label="Pilih bahasa" data-i18n-aria-label="languageSelectLabel">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+            </select>
+            <div class="google-auth">
+                <div class="google-signin-button" id="google-signin-button"></div>
+                <p class="google-auth-status" id="google-auth-status" role="status" aria-live="polite" data-i18n="googleSignedOut">Belum login (opsional)</p>
+                <button class="google-signout-button" id="google-signout-button" type="button" data-i18n="googleSignOut" hidden>Keluar</button>
+            </div>
+            <section class="email-auth" aria-labelledby="email-auth-title">
+                <h3 id="email-auth-title" class="settings-label" data-i18n="emailAuthTitle">Akun pengunjung (opsional)</h3>
+                <form class="email-auth-form" id="email-auth-form">
+                    <button class="google-provider-button" id="email-google-sign-in-button" type="button">
+                        <svg viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6C44.4 37.93 46.98 31.7 46.98 24.55z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.53 2.56 10.78l7.97-6.19z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.8l-7.73-6c-2.13 1.43-4.86 2.27-8.16 2.27-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        <span data-i18n="emailGoogleSignIn">Lanjutkan dengan Google</span>
+                    </button>
+                    <p class="email-auth-divider" id="email-auth-divider" data-i18n="emailOr">atau gunakan email</p>
+                    <label for="email-auth-email" data-i18n="emailLabel">Email</label>
+                    <input id="email-auth-email" type="email" autocomplete="email" required>
+                    <label for="email-auth-password" data-i18n="emailPasswordLabel">Kata sandi (minimal 6 karakter)</label>
+                    <input id="email-auth-password" type="password" autocomplete="current-password" minlength="6" required>
+                    <p class="email-auth-status" id="email-auth-status" role="status" aria-live="polite" data-i18n="emailAuthReady">Masuk atau daftar dengan email. Login tidak wajib.</p>
+                    <div class="email-auth-actions" id="email-auth-actions">
+                        <button class="email-auth-button primary" id="email-sign-in-button" type="button" data-i18n="emailSignIn">Masuk</button>
+                        <button class="email-auth-button" id="email-register-button" type="button" data-i18n="emailRegister">Daftar</button>
+                        <button class="email-auth-button" id="email-reset-button" type="button" data-i18n="emailReset">Lupa kata sandi?</button>
+                    </div>
+                    <button class="google-signout-button" id="email-signout-button" type="button" data-i18n="emailSignOut" hidden>Keluar dari akun</button>
+                </form>
+            </section>
+            <span class="settings-label" data-i18n="colorLabel">Warna tema</span>
+            <div class="theme-options" role="group" aria-label="Pilih warna tema" data-i18n-aria-label="themeOptionsLabel">
+                <button class="theme-swatch theme-purple" type="button" data-theme-choice="purple" aria-label="Ungu" data-i18n-aria-label="themePurpleLabel" aria-pressed="true"></button>
+                <button class="theme-swatch theme-blue" type="button" data-theme-choice="blue" aria-label="Biru" data-i18n-aria-label="themeBlueLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-green" type="button" data-theme-choice="green" aria-label="Hijau" data-i18n-aria-label="themeGreenLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-red" type="button" data-theme-choice="red" aria-label="Merah" data-i18n-aria-label="themeRedLabel" aria-pressed="false"></button>
+                <button class="theme-swatch theme-black" type="button" data-theme-choice="black" aria-label="Hitam" data-i18n-aria-label="themeBlackLabel" aria-pressed="false"></button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="beranda">
+        <section class="hero" id="tentang">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span><span data-i18n="heroEyebrow">KOMUNITAS ESPORTS &amp; GAMING</span></p>
+                <h1><span class="heading-plain" data-i18n="heroTitle">Tentang</span> <span>HK Squad</span></h1>
+                <p class="hero-description" data-i18n="heroDescription">
+                    Bukan sekadar bermain bersama. Kami membangun tim yang solid,
+                    saling mendukung, dan terus berkembang di setiap pertandingan.
+                </p>
+                <a class="primary-btn" href="member.html"><span data-i18n="memberButton">Lihat Anggota Squad</span> <span aria-hidden="true">→</span></a>
+                <p class="hero-note" data-i18n="heroNote">SOLIDARITAS · KERJA SAMA · SPORTIVITAS</p>
+            </div>
+            <div class="hero-art" aria-label="Logo HK Squad" data-i18n-aria-label="logoArtLabel">
+                <div class="art-glow"></div>
+                <img src="img/Screenshot%202026-04-11%20112253.png" alt="Logo HK Squad dengan maskot serigala" data-i18n-alt="logoImageAlt">
+                <span class="art-caption" data-i18n="artCaption">EST. HILANG KONEKSI</span>
+            </div>
+        </section>
+
+        <section class="about-section" id="nilai">
+            <div class="section-title">
+                <p class="eyebrow" data-i18n="aboutEyebrow">SIAPA KAMI</p>
+                <h2><span data-i18n="aboutHeading">Berjuang sebagai</span> <span data-i18n="teamHeading">satu tim.</span></h2>
+            </div>
+            <div class="about-content">
+                <p class="about-lead">
+                    <strong>HK Squad</strong> <span data-i18n="aboutLead">Filosofi Squad Hilang Koneksi Nama Hilang Koneksi bukan sekadar nama, melainkan cerita perjuangan yang selalu kami kenang. Setiap kali bermain Mobile Legends bersama, koneksi internet sering menjadi tantangan terbesar. Di saat kami sedang berjuang meraih kemenangan, sinyal sering menghilang dan membuat permainan terputus. Namun, di tengah kesulitan itu, ada satu teman yang selalu berjuang lebih keras. Rela pergi ke tempat yang bernama Matang Liang demi mencari sinyal yang lebih baik agar bisa kembali bermain bersama tim. Perjalanan mencari koneksi tersebut menjadi simbol semangat, kesabaran, dan solidaritas dalam squad kami.Karena itulah kami memilih nama "Hilang Koneksi". Nama ini mengingatkan bahwa meskipun sinyal dapat hilang, persahabatan, kerja sama, dan semangat untuk bermain bersama tidak akan pernah terputus. Setiap lag, disconnect, dan pencarian sinyal menjadi bagian dari perjalanan yang membuat squad kami unik dan penuh cerita."Sinyal boleh hilang, koneksi persahabatan tetap terhubung."</span>
+                </p>
+                <p>
+                    <span data-i18n="aboutBody">Kami percaya setiap pemain bisa berkembang ketika punya lingkungan yang saling menyemangati. Menang dirayakan bersama, kalah jadi pelajaran untuk kembali lebih kuat.</span>
+                </p>
+            </div>
+            <div class="values-grid">
+                <article class="value-card">
+                    <span class="value-number">01</span>
+                    <h3 data-i18n="valueSolidarity">Solidaritas</h3>
+                    <p data-i18n="valueSolidarityBody">Saling mendukung dan menjaga kekompakan, di dalam maupun di luar permainan.</p>
+                </article>
+                <article class="value-card">
+                    <span class="value-number">02</span>
+                    <h3 data-i18n="valueTeamwork">Kerja Sama</h3>
+                    <p data-i18n="valueTeamworkBody">Berkomunikasi, menyusun strategi, dan mencapai tujuan sebagai satu tim.</p>
+                </article>
+                <article class="value-card">
+                    <span class="value-number">03</span>
+                    <h3 data-i18n="valueFairPlay">Sportivitas</h3>
+                    <p data-i18n="valueFairPlayBody">Menghormati lawan, menerima hasil, dan tetap bermain dengan sikap positif.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="join-section" id="segera">
+            <div>
+                <p class="eyebrow" data-i18n="nextEyebrow">LANGKAH BERIKUTNYA</p>
+                <h2><span data-i18n="nextHeading">Siap jadi bagian dari</span> <span data-i18n="nextHighlight">perjalanan kami?</span></h2>
+            </div>
+            <div class="coming-soon">
+                <span class="coming-icon" aria-hidden="true">✦</span>
+                <p data-i18n="memberPrompt">Lihat dan kelola 12 slot anggota HK Squad.</p>
+                <a class="member-link" href="member.html"><span data-i18n="memberPageLink">Buka halaman member</span> <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="#beranda">
+            <img src="img/Screenshot%202026-04-11%20112253.png" alt="">
+            <span>HK<span class="brand-dot">.</span>Squad</span>
+        </a>
+        <p data-i18n="footerTagline">Solid bersama, berkembang bersama.</p>
+        <span class="footer-copy">&copy; 2026 HK Squad</span>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js" defer></script>
+    <script src="java%20script/auth-config.js"></script>
+    <script src="https://accounts.google.com/gsi/client" defer></script>
+    <script src="java%20script/js.js" defer></script>
+</body>
+</html>
